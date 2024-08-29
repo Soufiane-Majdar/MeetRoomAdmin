@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="page-title">{{ room.name }}</h1>
+    <p class="room-detail">Location: {{ room.location }}</p>
+    <p class="room-detail">Capacity: {{ room.capacity }}</p>
+    <p class="room-detail">Amenities: {{ room.amenities }}</p>
+    <a href="{% url 'room_update' room.id %}" class="btn btn-secondary">Edit Room</a>
+    <a href="{% url 'room_delete' room.id %}" class="btn btn-danger">Delete Room</a>
+    <a href="{% url 'room_list' %}" class="btn btn-primary">Back to Room List</a>
+</div>
+{% endblock %}

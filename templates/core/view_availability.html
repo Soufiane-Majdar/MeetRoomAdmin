@@ -1,0 +1,34 @@
+{% extends 'meetroomadmin/base.html' %}
+
+{% block title %}View Availability - MeetRoomAdmin{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Room Availability</h2>
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>Room</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example data - Replace with dynamic content -->
+            <tr>
+                <td>Room 1</td>
+                <td>2024-08-29</td>
+                <td>10:00 AM - 11:00 AM</td>
+                <td>Available</td>
+            </tr>
+            <tr>
+                <td>Room 2</td>
+                <td>2024-08-29</td>
+                <td>11:00 AM - 12:00 PM</td>
+                <td>Reserved</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

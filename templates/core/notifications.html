@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="page-title">Notifications</h1>
+    <ul class="notification-list">
+        {% for notification in notifications %}
+        <li class="notification-item">
+            {{ notification.message }} - {{ notification.sent_at }}
+            {% if not notification.is_read %}
+            <span class="badge badge-info">New</span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

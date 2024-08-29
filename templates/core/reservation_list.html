@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="page-title">Reservation List</h1>
+    <a href="{% url 'reservation_create' %}" class="btn btn-primary">Add Reservation</a>
+    <ul class="reservation-list">
+        {% for reservation in reservations %}
+        <li class="reservation-item">
+            {{ reservation.room.name }} reserved by {{ reservation.user.username }} from {{ reservation.start_time }} to {{ reservation.end_time }}
+            <a href="{% url 'reservation_update' reservation.id %}" class="btn btn-secondary">Edit</a>
+            <a href="{% url 'reservation_delete' reservation.id %}" class="btn btn-danger">Cancel</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

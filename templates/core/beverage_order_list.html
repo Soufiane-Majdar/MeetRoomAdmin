@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="page-title">Beverage Orders</h1>
+    <a href="{% url 'beverage_order_create' %}" class="btn btn-primary">Add Beverage Order</a>
+    <ul class="order-list">
+        {% for order in orders %}
+        <li class="order-item">
+            Order for {{ order.reservation.room.name }} by {{ order.reservation.user.username }} - {{ order.items }}
+            <a href="{% url 'beverage_order_update' order.id %}" class="btn btn-secondary">Edit</a>
+            <a href="{% url 'beverage_order_delete' order.id %}" class="btn btn-danger">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

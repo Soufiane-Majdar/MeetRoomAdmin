@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="page-title">Reports</h1>
+    <ul class="report-list">
+        {% for report in reports %}
+        <li class="report-item">
+            <a href="{% url 'report_detail' report.id %}" class="report-link">Report generated at {{ report.generated_at }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
